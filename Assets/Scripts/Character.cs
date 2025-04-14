@@ -3,9 +3,8 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     public float moveSpeed = 5f;
-    public float jumpForce = 12f;
     private Rigidbody2D rb;
-    private bool isGrounded;
+    private bool isGravityInverted = false;
 
     [Header("Ground Check")]
     public Transform groundCheck;
@@ -23,11 +22,16 @@ public class Character : MonoBehaviour
         float moveX = Input.GetAxisRaw("Horizontal");
         rb.linearVelocity = new Vector2(moveX * moveSpeed, rb.linearVelocity.y);
 
-        // Jump
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        // Invert gravity when spacebar is pressed
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            isGravityInverted = !isGravityInverted;
+            rb.gravityScale *= -1;
+
+            // Flip the character's Y scale for visual effect (optional)
+            Vector3 scale = transform.localScale;
+            scale.y *= -1;
+            transform.localScale = scale;
         }
     }
 
