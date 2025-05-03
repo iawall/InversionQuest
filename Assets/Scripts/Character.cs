@@ -11,6 +11,7 @@ public class Character : MonoBehaviour
     public Transform groundCheck;
     public float groundRadius = 0.1f;
     public LayerMask groundLayer;
+    private bool isGrounded = false;
 
     void Start()
     {
@@ -19,6 +20,7 @@ public class Character : MonoBehaviour
 
     void Update()
     {
+        isGrounded =  Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
         // Horizontal Movement
         float moveX = Input.GetAxisRaw("Horizontal");
         rb.linearVelocity = new Vector2(moveX * moveSpeed, rb.linearVelocity.y);

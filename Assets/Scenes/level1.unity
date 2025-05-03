@@ -402,6 +402,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
+    - target: {fileID: 7641781156199630346, guid: a150b4f7fa167764591f1c36ca21e239, type: 3}
+      propertyPath: m_Size.x
+      value: 3.8219035
+      objectReference: {fileID: 0}
+    - target: {fileID: 7641781156199630346, guid: a150b4f7fa167764591f1c36ca21e239, type: 3}
+      propertyPath: m_Size.y
+      value: 7.6548295
+      objectReference: {fileID: 0}
+    - target: {fileID: 7641781156199630346, guid: a150b4f7fa167764591f1c36ca21e239, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.89438856
+      objectReference: {fileID: 0}
+    - target: {fileID: 7641781156199630346, guid: a150b4f7fa167764591f1c36ca21e239, type: 3}
+      propertyPath: m_Offset.y
+      value: -1.0221169
+      objectReference: {fileID: 0}
     - target: {fileID: 8322666651055970429, guid: a150b4f7fa167764591f1c36ca21e239, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8
