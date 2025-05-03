@@ -50,7 +50,7 @@ public class Character : MonoBehaviour
             if (hasKey)
             {
                 //Debug.Log("Goal reached with key! Level complete.");
-                SceneManager.LoadScene("level2");
+                SceneManager.LoadScene(2);
             }
             else
             {
