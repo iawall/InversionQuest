@@ -13,6 +13,8 @@ public class Character : MonoBehaviour
     public LayerMask groundLayer;
     private bool isGrounded = false;
 
+    private float moveX;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -20,22 +22,40 @@ public class Character : MonoBehaviour
 
     void Update()
     {
-        isGrounded =  Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
-        // Horizontal Movement
-        float moveX = Input.GetAxisRaw("Horizontal");
-        rb.linearVelocity = new Vector2(moveX * moveSpeed, rb.linearVelocity.y);
+        // Capture input
+        moveX = Input.GetAxisRaw("Horizontal");
 
-        // Invert gravity when spacebar is pressed
-        if (Input.GetKeyDown(KeyCode.Space))
+        // Ground check
+        bool isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
+
+        // Invert gravity ONLY if grounded
+        if (isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
             isGravityInverted = !isGravityInverted;
             rb.gravityScale *= -1;
 
-            // Flip the character's Y scale for visual effect (optional)
+            // Flip character visually
             Vector3 scale = transform.localScale;
             scale.y *= -1;
             transform.localScale = scale;
         }
+    }
+
+    void FixedUpdate()
+    {
+        // Apply constant linear movement
+        rb.linearVelocity = new Vector2(moveX * moveSpeed, rb.linearVelocity.y);
+
+        // Clamp position to bounds
+        float minX = -9f;
+        float maxX = 9f;
+        float minY = -5f;
+        float maxY = 5f;
+
+        Vector3 clampedPosition = transform.position;
+        clampedPosition.x = Mathf.Clamp(clampedPosition.x, minX, maxX);
+        clampedPosition.y = Mathf.Clamp(clampedPosition.y, minY, maxY);
+        transform.position = clampedPosition;
     }
 
 
