@@ -1,11 +1,12 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Character : MonoBehaviour
 {
     public float moveSpeed = 5f;
     private Rigidbody2D rb;
     private bool isGravityInverted = false;
 
+    private bool hasKey = false;
     [Header("Ground Check")]
     public Transform groundCheck;
     public float groundRadius = 0.1f;
@@ -34,6 +35,35 @@ public class Character : MonoBehaviour
             transform.localScale = scale;
         }
     }
+
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("key"))
+        {
+            hasKey = true;
+            Destroy(other.gameObject); // Remove key from scene
+            Debug.Log("Key collected!");
+        }
+        else if (other.CompareTag("door"))
+        {
+            if (hasKey)
+            {
+                //Debug.Log("Goal reached with key! Level complete.");
+                SceneManager.LoadScene("level2");
+            }
+            else
+            {
+                Debug.Log("You need the key to complete the level.");
+            }
+        }
+        else if (other.CompareTag("hazard"))
+    {
+        Debug.Log("Hit a hazard! Restarting level...");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    }
+
 
     // Optional: draw ground check gizmo in editor
     void OnDrawGizmosSelected()
