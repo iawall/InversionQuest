@@ -1,6 +1,9 @@
+using UnityEditor;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 public class Character : MonoBehaviour
 {
     public float moveSpeed = 5f;
@@ -23,11 +26,13 @@ public class Character : MonoBehaviour
 
     void Update()
     {
+
         // Capture input
         moveX = Input.GetAxisRaw("Horizontal");
 
         // Ground check
         bool isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
+        Debug.Log("IsGrounded: " + isGrounded);
 
         // Invert gravity ONLY if grounded
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
@@ -74,6 +79,7 @@ public class Character : MonoBehaviour
             {
                 Debug.Log("Goal reached with key! Showing level complete UI.");
                 LevelCompleteManager.Instance?.ShowLevelCompleteUI();
+               
             }
             else
             {
