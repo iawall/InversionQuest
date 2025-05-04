@@ -78,6 +78,7 @@ public class Character : MonoBehaviour
             if (hasKey)
             {
                 Debug.Log("Goal reached with key! Showing level complete UI.");
+                
                 LevelCompleteManager.Instance?.ShowLevelCompleteUI();
                
             }
