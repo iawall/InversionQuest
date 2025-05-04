@@ -55,10 +55,17 @@ public class PauseManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        string sceneName = scene.name;
+
         if (scene.name == "StartScene")
         {
-            DisablePauseUI();
-            this.enabled = false;
+            // Disable pause functionality (but not the script)
+            if (pauseMenuUI != null)
+                pauseMenuUI.SetActive(false);
+
+            isPaused = false;
+            Time.timeScale = 1f;
+
             return;
         }
 
