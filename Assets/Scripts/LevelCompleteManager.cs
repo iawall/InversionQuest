@@ -10,6 +10,8 @@ public class LevelCompleteManager : MonoBehaviour
     public GameObject levelCompleteUI;
     public Button nextButton;
     public Button quitButton;
+    public Text completeMessage;
+    public int finalLevelBuildIndex = 3;
 
     void Awake()
     {
@@ -68,6 +70,26 @@ public class LevelCompleteManager : MonoBehaviour
         {
             levelCompleteUI.SetActive(true);
             Time.timeScale = 0f;
+
+            // Check if we're on the final level
+            bool isFinalLevel = SceneManager.GetActiveScene().buildIndex == finalLevelBuildIndex;
+
+            if (isFinalLevel)
+            {
+                if (nextButton != null)
+                    nextButton.gameObject.SetActive(false);
+
+                if (completeMessage != null)
+                    completeMessage.gameObject.SetActive(true);
+            }
+            else
+            {
+                if (nextButton != null)
+                    nextButton.gameObject.SetActive(true);
+
+                if (completeMessage != null)
+                    completeMessage.gameObject.SetActive(false);
+            }
         }
     }
 
