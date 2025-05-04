@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class Character : MonoBehaviour
 {
     public float moveSpeed = 5f;
@@ -71,8 +72,8 @@ public class Character : MonoBehaviour
         {
             if (hasKey)
             {
-                //Debug.Log("Goal reached with key! Level complete.");
-                SceneManager.LoadScene(2);
+                Debug.Log("Goal reached with key! Showing level complete UI.");
+                LevelCompleteManager.Instance?.ShowLevelCompleteUI();
             }
             else
             {
