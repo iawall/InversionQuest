@@ -89,4 +89,9 @@ public class LevelCompleteManager : MonoBehaviour
         HideLevelCompleteUI();
         SceneManager.LoadScene("StartScene");
     }
+
+    public bool IsLevelCompleteUIActive()
+    {
+        return levelCompleteUI != null && levelCompleteUI.activeSelf;
+    }
 }

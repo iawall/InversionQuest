@@ -41,6 +41,11 @@ public class PauseManager : MonoBehaviour
     {
         if (!this.enabled || pauseMenuUI == null) return;
 
+        // Block pause toggle if LevelComplete is active
+        if (LevelCompleteManager.Instance != null && 
+            LevelCompleteManager.Instance.IsLevelCompleteUIActive())
+            return;
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
