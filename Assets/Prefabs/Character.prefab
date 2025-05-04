@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 3030196418800820063}
   - component: {fileID: 5684361930312634689}
   - component: {fileID: 7641781156199630346}
+  - component: {fileID: 5803594729840657568}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -136,7 +137,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  jumpForce: 12
   groundCheck: {fileID: 5335723786608873722}
   groundRadius: 0.1
   groundLayer:
@@ -179,6 +179,43 @@ CapsuleCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
+  m_Material: {fileID: 6200000, guid: c22668a6cebd95448876410fa9db66c4, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -1.2400001, y: -3.3799999}
+  m_Size: {x: 4.0541115, y: 4.0541115}
+  m_Direction: 0
+--- !u!70 &5803594729840657568
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4871473044360113083}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -203,8 +240,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 1}
+  m_Offset: {x: -1.1537745, y: 0.17847848}
+  m_Size: {x: 3.0020573, y: 5.27361}
   m_Direction: 0
 --- !u!1 &5832317935786734714
 GameObject:
