@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 184781265}
   - component: {fileID: 184781264}
   - component: {fileID: 184781263}
+  - component: {fileID: 184781266}
   m_Layer: 6
   m_Name: Square (6)
   m_TagString: Ground
@@ -147,7 +148,7 @@ BoxCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c22668a6cebd95448876410fa9db66c4, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -247,12 +248,26 @@ Transform:
   m_GameObject: {fileID: 184781262}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.4668, y: 3.62, z: 0}
-  m_LocalScale: {x: 2.89344, y: 0.5, z: 1}
+  m_LocalPosition: {x: -5.23, y: 3.62, z: 0}
+  m_LocalScale: {x: 1.59, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &184781266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184781262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f97f60a0be56a9743b1261c97c7952db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
+  moveDistance: 3
 --- !u!1001 &205881213
 PrefabInstance:
   m_ObjectHideFlags: 0
