@@ -263,6 +263,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8747618636899991572, guid: 330486b3a7b256b46930bc5449cb1f4b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -276,6 +280,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1025734160681285623, guid: 985c6f3dffff0e84e8fd84ccdf32e934, type: 3}
+      propertyPath: m_Color.b
+      value: 0.19607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 1025734160681285623, guid: 985c6f3dffff0e84e8fd84ccdf32e934, type: 3}
+      propertyPath: m_Color.g
+      value: 0.19607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 1025734160681285623, guid: 985c6f3dffff0e84e8fd84ccdf32e934, type: 3}
+      propertyPath: m_Color.r
+      value: 0.19607843
+      objectReference: {fileID: 0}
     - target: {fileID: 4162773885792365357, guid: 985c6f3dffff0e84e8fd84ccdf32e934, type: 3}
       propertyPath: m_Name
       value: LevelCompleteManager
@@ -319,6 +335,14 @@ PrefabInstance:
     - target: {fileID: 5076394687071903219, guid: 985c6f3dffff0e84e8fd84ccdf32e934, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8494748167211660507, guid: 985c6f3dffff0e84e8fd84ccdf32e934, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109180706831054644, guid: 985c6f3dffff0e84e8fd84ccdf32e934, type: 3}
+      propertyPath: finalLevelBuildIndex
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

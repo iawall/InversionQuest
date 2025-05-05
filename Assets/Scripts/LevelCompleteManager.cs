@@ -11,7 +11,7 @@ public class LevelCompleteManager : MonoBehaviour
     public Button nextButton;
     public Button quitButton;
     public Text completeMessage;
-    public int finalLevelBuildIndex = 3;
+    public int finalLevelBuildIndex = 4;
 
     void Awake()
     {

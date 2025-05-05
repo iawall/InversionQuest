@@ -29,8 +29,7 @@ public class Character : MonoBehaviour
         moveX = Input.GetAxisRaw("Horizontal");
 
         // Ground check
-        bool isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
-        Debug.Log("IsGrounded: " + isGrounded);
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
 
         // Invert gravity ONLY if grounded
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))

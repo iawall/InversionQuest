@@ -6,10 +6,17 @@ public class StartScreenController : MonoBehaviour
 {
     [Header("UI Elements")]
     public Button startButton;
+    public Button controlsButton;
+    public GameObject controlsPanel;
+    public Button closeControlsButton;
 
     void Start()
     {
         startButton.onClick.AddListener(StartGame);
+        controlsButton.onClick.AddListener(ShowControls);
+        closeControlsButton.onClick.AddListener(HideControls);
+
+        controlsPanel.SetActive(false);
     }
 
     public void LoadLevel1()
@@ -30,4 +37,15 @@ public class StartScreenController : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false;
         #endif
     }
+
+    public void ShowControls()
+    {
+        controlsPanel.SetActive(true);
+    }
+
+    public void HideControls()
+    {
+        controlsPanel.SetActive(false);
+    }
+
 }
