@@ -46,16 +46,13 @@ public class PauseManager : MonoBehaviour
             LevelCompleteManager.Instance.IsLevelCompleteUIActive())
             return;
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             if (isPaused)
                 Resume();
             else
                 Pause();
         }
-
-        if (Input.GetKeyDown(KeyCode.R)) Resume();
-        if (Input.GetKeyDown(KeyCode.Q)) QuitGame();
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
